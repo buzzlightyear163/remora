@@ -1,0 +1,53 @@
+/* Breakpoints copied from the reference: 1000px (tablet) and 640px (mobile). */
+@media (max-width: 1000px) {
+  nav .lk { display: none; }
+  .mir { grid-template-columns: 1fr; }
+  .bld { position: static; }
+  .how { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .how:before { display: none; }
+  .hd { flex-direction: column; align-items: flex-start; }
+  .hide-m { display: none; }
+  .sum { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  nav { padding: 0 18px !important; }
+  .logo { font-size: 26px; gap: 8px !important; }
+  .logo .brand-whale { height: 24px; }
+  .wrap { width: calc(100% - 36px) !important; }
+  #hero { min-height: 800px !important; }
+  .hc { transform: translateY(-48%) !important; }
+  #hero h1 { font-size: clamp(51px, 11vw, 70px) !important; }
+  #hero .sub { max-width: 96%; font-size: 16px !important; }
+  .ca { max-width: 100%; gap: 7px !important; padding-left: 10px !important; font-size: 11px !important; }
+  .ca > span:nth-child(2) { text-overflow: ellipsis; white-space: nowrap; min-width: 0; overflow: hidden; }
+  .ca .t, .ca .c { flex-shrink: 0; }
+  .ca-row { display: flex; }
+  .ca-row .ca { flex: 1 1 100%; }
+  .ca-pump { flex: 1 1 100%; height: 42px; }
+  .hs { gap: 18px !important; }
+  .hs div { flex: 1; font-size: 10px !important; }
+  .hs b { font-size: 22px !important; }
+  .sec { padding: 72px 0 !important; }
+  .feat { grid-template-columns: 1fr !important; }
+  .fc .tp b { font-size: 26px !important; }
+  .podbar { align-items: stretch !important; }
+  .sorts { width: 100%; }
+  .sorts button { flex: 1; padding: 0 8px !important; }
+  .paste { width: 100%; max-width: 100%; }
+  .paste input { min-width: 0; }
+  .tbl { min-width: 720px; }
+  .prev, .bld { padding: 18px !important; }
+  .prev h3 { flex-wrap: wrap; gap: 8px; }
+  .lab { flex-wrap: wrap; gap: 6px; }
+  .how { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .st { padding: 0 !important; }
+  .end { padding: 80px 0 !important; }
+  footer .wrap { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .rv { opacity: 1 !important; transition: none !important; transform: none !important; }
+  .tape .tr, .eyebrow i { animation: none !important; }
+}

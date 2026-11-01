@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Remora brand renderer</title>
+    <style>
+      body { margin: 0; background: #040b17; color: #e6eef8; font: 14px system-ui; }
+      #out { display: flex; flex-wrap: wrap; gap: 16px; padding: 16px; }
+      #out img { max-width: 100%; height: auto; border: 1px solid #8fd0ff22; }
+    </style>
+  </head>
+  <body>
+    <!-- Dev-only tool: renders the X / pump.fun graphics from the same three.js whale as the site.
+         npm run dev, then open http://localhost:5173/brand/render.html (or run scripts/render-brand.cjs). -->
+    <div id="out"></div>
+    <script type="module" src="./render.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg" cx="70%" cy="45%" r="80%">
+      <stop offset="0" stop-color="#0b2342"/>
+      <stop offset=".7" stop-color="#040b17"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(72 60) scale(4)">
+    <path d="M3 18C7 10.5 25 10.5 29 18" fill="none" stroke="#8FD0FF" stroke-opacity=".5" stroke-width="3.4" stroke-linecap="round"/>
+    <path fill="#8FD0FF" d="M5.5 19C5.5 16.6 10 15.3 16 15.5C20.6 15.7 23.6 16.7 25.6 18.1L28.8 16.2L27.6 19L28.8 21.8L25.6 19.9C23.6 21.3 20.6 22.3 16 22.5C10 22.7 5.5 21.4 5.5 19Z"/>
+    <circle cx="8.4" cy="18.7" r=".75" fill="#040B17"/>
+  </g>
+  <text x="80" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="104" fill="#E6EEF8">Your coin rides</text>
+  <text x="80" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="104" fill="#E6EEF8">with the <tspan fill="#8FD0FF" font-style="italic">whales.</tspan></text>
+  <text x="80" y="540" font-family="ui-monospace, monospace" font-size="24" fill="#8699B3">REMORA · ON PUMP.FUN · LIVE FROM HYPERLIQUID</text>
+</svg>

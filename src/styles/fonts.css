@@ -1,0 +1,37 @@
+/* Fonts: same families as the reference (Geist, Geist Mono, Instrument Serif), self-hosted via @fontsource. */
+@import '@fontsource-variable/geist/index.css';
+@import '@fontsource-variable/geist-mono/index.css';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+
+/* Metric-matched fallbacks (copied from the reference's next/font output) to avoid layout shift. */
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local(Arial);
+  ascent-override: 95.94%;
+  descent-override: 28.16%;
+  line-gap-override: 0%;
+  size-adjust: 104.76%;
+}
+@font-face {
+  font-family: 'Geist Mono Fallback';
+  src: local(Arial);
+  ascent-override: 74.67%;
+  descent-override: 21.92%;
+  line-gap-override: 0%;
+  size-adjust: 134.59%;
+}
+@font-face {
+  font-family: 'Instrument Serif Fallback';
+  src: local('Times New Roman');
+  ascent-override: 117.94%;
+  descent-override: 36.93%;
+  line-gap-override: 0%;
+  size-adjust: 83.94%;
+}
+
+:root {
+  --font-geist: 'Geist Variable', 'Geist', 'Geist Fallback';
+  --font-geist-mono: 'Geist Mono Variable', 'Geist Mono', 'Geist Mono Fallback';
+  --font-instrument-serif: 'Instrument Serif', 'Instrument Serif Fallback';
+}

@@ -1,0 +1,67 @@
+/* ---------- launch dialog (native <dialog>) ---------- */
+.launch-dialog { border: 1px solid var(--border); width: min(560px, 100% - 32px); max-height: calc(100dvh - 48px); color: var(--foreground); background: var(--background); border-radius: 20px; margin: auto; padding: 36px; overflow-y: auto; }
+.launch-dialog::backdrop { background: color-mix(in srgb, var(--background) 85%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.launch-close { border: 1px solid var(--border); background: var(--muted); min-width: 40px; min-height: 40px; color: var(--foreground); font: 24px var(--font-geist), sans-serif; cursor: pointer; border-radius: 50%; margin-left: auto; display: block; }
+.launch-header { justify-content: space-between; align-items: center; display: flex; }
+.launch-steps { border-bottom: 1px solid var(--border); justify-content: space-between; gap: 8px; padding: 24px 0; list-style: none; display: flex; }
+.launch-steps li { color: var(--muted-foreground); flex-direction: column; align-items: center; gap: 8px; font-size: 14px; display: flex; }
+.launch-steps li span { border: 1px solid var(--border); border-radius: 50%; place-items: center; width: 30px; height: 30px; display: grid; }
+.launch-steps li[aria-current], .launch-steps li.complete { color: var(--primary); }
+.launch-steps li[aria-current] span { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+.launch-dialog h2 { font-family: var(--font-geist), sans-serif; letter-spacing: -0.03em; margin-top: 24px; font-size: clamp(28px, 6vw, 36px); font-weight: 500; line-height: 1.2; }
+.launch-dialog h2:focus { outline: none; }
+#launchDescription { color: var(--muted-foreground); margin-top: 12px; font-size: 15px; line-height: 1.6; }
+.launch-fields { flex-direction: column; gap: 22px; padding: 24px 0; display: flex; }
+.launch-fields label { flex-direction: column; gap: 10px; font-size: 14px; display: flex; }
+.launch-fields input:not([type='range']):not([type='checkbox']), .launch-fields select { border: 1px solid var(--border); background: var(--muted); width: 100%; color: var(--foreground); font: inherit; border-radius: 8px; padding: 13px 14px; font-size: 16px; }
+.launch-fields small { color: var(--muted-foreground); font-size: 14px; line-height: 1.5; display: block; }
+.launch-whale { flex-direction: column; gap: 12px; display: flex; }
+.launch-whale label { flex-direction: row; justify-content: space-between; align-items: center; }
+.launch-whale output { color: var(--primary); font: 14px var(--font-geist-mono), monospace; }
+.launch-whale input { width: 100%; accent-color: var(--primary); }
+.launch-edit-pod { min-height: 40px; color: var(--primary); cursor: pointer; background: 0 0; align-self: flex-start; font-size: 14px; }
+.launch-edit-pod:disabled { opacity: 0.45; cursor: not-allowed; }
+.launch-fields .launch-summary { margin: 0; }
+.launch-summary { border: 1px solid var(--border); background: var(--muted); color: var(--foreground); border-radius: 12px; flex-direction: column; gap: 16px; margin: 24px 0; padding: 20px; display: flex; }
+.launch-summary h3 { overflow-wrap: anywhere; font-size: 20px; }
+.launch-summary h3 span { color: var(--primary); }
+.launch-summary dl { grid-template-columns: 1fr 1fr; gap: 18px; display: grid; }
+.launch-summary dt { color: var(--muted-foreground); font-size: 14px; }
+.launch-summary dd { margin-top: 4px; font-size: 16px; }
+.launch-summary p { color: var(--muted-foreground); font-size: 14px; line-height: 1.5; }
+.launch-summary ul { border-top: 1px solid var(--border); flex-direction: column; gap: 12px; padding: 16px 0 0; list-style: none; display: flex; }
+.launch-summary li { justify-content: space-between; gap: 16px; font-size: 14px; display: flex; }
+.launch-summary li span { overflow-wrap: anywhere; min-width: 0; }
+.launch-summary li b { color: var(--primary); white-space: nowrap; }
+.launch-fields .launch-confirm { flex-direction: row; align-items: flex-start; gap: 12px; line-height: 1.5; }
+.launch-confirm input { width: 18px; height: 18px; accent-color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.launch-controls { justify-content: space-between; gap: 12px; display: flex; }
+.launch-controls .btn { min-height: 44px; font-size: 14px; }
+.launch-controls .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.launch-disclosure { color: var(--muted-foreground); margin-top: 20px; font-size: 14px; line-height: 1.5; }
+.launch-status:not(:empty) { color: var(--primary); padding-bottom: 20px; font-size: 14px; line-height: 1.5; }
+.deployment-network { border: 1px solid var(--border); background: var(--muted); color: var(--foreground); border-radius: 12px; flex-direction: column; gap: 6px; padding: 18px; display: flex; }
+.deployment-network strong { color: var(--primary); font-size: 16px; }
+.deployment-network span, .deployment-owner > span { color: var(--muted-foreground); font-size: 14px; }
+.deployment-owner { flex-direction: column; gap: 8px; display: flex; }
+.deployment-owner code, .deployment-receipt code { overflow-wrap: anywhere; font: 14px var(--font-geist-mono), monospace; line-height: 1.5; }
+.deployment-wallet { width: 100%; min-height: 48px; }
+.deployment-wallet:disabled { opacity: 0.45; cursor: not-allowed; }
+.deployment-cost { border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.deployment-cost dl { flex-direction: column; gap: 14px; display: flex; }
+.deployment-cost dl > div { justify-content: space-between; align-items: baseline; gap: 12px; font-size: 14px; display: flex; }
+.deployment-cost dt { color: var(--muted-foreground); }
+.deployment-cost dd { flex-shrink: 0; }
+.deployment-cost p { color: var(--muted-foreground); margin-top: 16px; font-size: 14px; line-height: 1.5; }
+.deployment-tools { flex-wrap: wrap; justify-content: space-between; gap: 12px; display: flex; }
+.deployment-receipt { border: 1px solid var(--border); border-radius: 12px; flex-direction: column; gap: 12px; padding: 18px; display: flex; }
+.deployment-receipt a, .deployment-link { color: var(--primary); text-underline-offset: 4px; font-size: 14px; }
+.deployment-receipt > span { color: var(--muted-foreground); font-size: 14px; }
+@media (max-width: 420px) {
+  .launch-steps { gap: 4px; }
+  .launch-steps li { font-size: 14px; }
+  .deployment-cost { padding: 14px; }
+}
+@media (max-width: 640px) {
+  .launch-dialog { padding: 24px; }
+}
