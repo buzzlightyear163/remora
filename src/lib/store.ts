@@ -24,6 +24,7 @@ export class RemoraStore {
 
   private listeners = new Set<Listener>();
   private raf = 0;
+  private rafTimer = 0;
   private toastTimer = 0;
   private refreshing = false;
   private timers: number[] = [];
@@ -38,16 +39,23 @@ export class RemoraStore {
   /** batch many small updates (101 wallets loading) into one render per frame */
   bump = () => {
     if (this.raf) return;
-    this.raf = requestAnimationFrame(() => {
+    // next frame, or 120 ms at the latest: rAF is paused in hidden/embedded views (in-app browsers, background tabs)
+    const flush = () => {
+      if (!this.raf) return;
+      cancelAnimationFrame(this.raf);
+      clearTimeout(this.rafTimer);
       this.raf = 0;
       this.version++;
       this.listeners.forEach(l => l());
-    });
+    };
+    this.raf = requestAnimationFrame(flush);
+    this.rafTimer = window.setTimeout(flush, 120);
   };
 
   /** synchronous notify for user input (controlled inputs must update in the same tick) */
   emit = () => {
     if (this.raf) cancelAnimationFrame(this.raf);
+    clearTimeout(this.rafTimer);
     this.raf = 0;
     this.version++;
     this.listeners.forEach(l => l());
