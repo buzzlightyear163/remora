@@ -4,7 +4,7 @@ export const BRAND = {
   name: 'Remora',
   ticker: '$REMORA',
   /** Paste the pump.fun CA here at launch. While empty, the CA pills are hidden. */
-  ca: 'Eb6EZK9F75z4KBT8VhRitEmBVZfzmcSpdrcFwkprpump',
+  ca: '9y1avgLeKGSA6KbyjotcpXjmytShzSXezmYWj5nTpump',
   xHandle: 'RemoraOnHL',
   xUrl: 'https://x.com/RemoraOnHL',
   logo: '/images/remora-logo.svg',
